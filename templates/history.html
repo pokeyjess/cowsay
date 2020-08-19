@@ -7,15 +7,16 @@
   </head>
   <body>
     <h1>Last 10 Cowsayings</h1>
+    <div> 
     {% for cowsay in cowsay_history %}
     <li>
       {{cowsay.input}}
     </li>
-
     {% endfor %}
-
+</div>
 </br>
-
+<div>
     <a href="/">Back to Cowsay</a>
+</div>
   </body>
 </html>
