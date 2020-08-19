@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from cowsay_app.views import index
+from cowsay_app.views import index, history
 
 urlpatterns = [
     path('', index, name="homepage"),
+    path('history/', history),
     path('admin/', admin.site.urls),
 ]

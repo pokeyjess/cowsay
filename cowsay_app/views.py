@@ -6,6 +6,8 @@ import subprocess
 # I mainly used this source to figure out subprocess: 
 # https://linuxhint.com/execute_shell_python_subprocess_run_method/
 # I also used Stackoverflow and Python docs
+# Also found some useful stuff on Stackoverflow for doing the history:
+# https://stackoverflow.com/questions/47428403/how-to-get-the-last-10-item-data-in-django
 
 def index(request):
     if request.method == "POST":
@@ -22,8 +24,11 @@ def index(request):
             return render(request, "index.html", {'form': new_input, 'cow': cow})
                   
     form = InputForm()
-    return render(request, "index.html", {"title": "Welcome to Cowsay", "form": form})
+    return render(request, "index.html", {"title": "Welcome to Cowsay!", "form": form})
     
-    
+def history(request):
+    cowsay_history = Input.objects.order_by('-id')[:10]
+    return render(request, 'history.html', {'cowsay_history': cowsay_history})
+
 
 

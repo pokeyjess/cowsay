@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Cowsayings</title>
+  </head>
+  <body>
+    <h1>Last 10 Cowsayings</h1>
+    {% for cowsay in cowsay_history %}
+    <li>
+      {{cowsay.input}}
+    </li>
+
+    {% endfor %}
+
+</br>
+
+    <a href="/">Back to Cowsay</a>
+  </body>
+</html>
